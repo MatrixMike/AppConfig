@@ -31,7 +31,7 @@ Haskell library for setting app 'constants' via a config file.
 
   
 
-*The email.cfg is just a nymber of key = value entries, each on a new line.*
+*The email.cfg is just a number of key = value entries, each on a new line.*
 	
 	username   = ausername
 	assword   = apassword
