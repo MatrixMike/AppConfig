@@ -2,7 +2,7 @@
 Haskell library for setting app 'constants' via a config file.
 -----------------
 
-*Application config values to be set from external config file. All declared as IORef String
+*Application config values to be set from external config file. All declared as IORef String.*
 
 *An smtp server*
 
@@ -13,6 +13,7 @@ Haskell library for setting app 'constants' via a config file.
 
  	username :: IORef String
  	username = unsafePerformIO $ newIORef ""
+
  	password :: IORef String
  	password = unsafePerformIO $ newIORef ""
 
