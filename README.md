@@ -22,9 +22,9 @@ Haskell library for setting app 'constants' via a config file.
 	main = do
 		let appSetup = [( "smtpServer", smtpServer), ("username", username), ("password", password)]
 		initSystem "email.cfg" appSetup
-		smtpServer' <- (asIOString smtpServer)
-		username'   <- (asIOString username)
-		password'   <- (asIOString password)
+		smtpServer' <- asIOString smtpServer
+		username'   <- asIOString username
+		password'   <- asIOString password
 		print smtpServer'  
 		print username'
 		print password'
