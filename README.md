@@ -13,11 +13,9 @@ Haskell library for setting app 'constants' via a config file.
 *with user name and password*
 
  username :: IORef String
-
  username = unsafePerformIO $ newIORef ""
 
  password :: IORef String
-
  password = unsafePerformIO $ newIORef ""
 
 *Then at the startup point of the application the above values are writen to with the values taken from the email.cfg file.*
