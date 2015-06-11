@@ -1,10 +1,8 @@
-# AppConfig
+
 Haskell library for setting app 'constants' via a config file.
+==============================================================
 
-
-
--- Application config values to be set from external config file.
--- All declared as IORef String
+Application config values to be set from external config file. All declared as IORef String
 --
 -- An smtp server
 smtpServer :: IORef String
