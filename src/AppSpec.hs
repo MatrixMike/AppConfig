@@ -21,8 +21,24 @@ smtpServer = unsafePerformIO $ newIORef ""
 
 main :: IO () 
 main = hspec $ do
+
+
+	describe "AppConfig.readProps" $ do
+		it "loads a valide cfg file" $ do
+
+			props <- readProps "email.cfg" 
+			length props `shouldBe` 4
+
+
+	describe "AppConfig.readProps" $ do
+		it "tries to load missing file" $ do
+
+			readProps "nofile" `shouldThrow` anyIOException
+
+
 	describe "AppConfig.initSystem" $ do
 		it "sets the value of smtpserver" $ do
+			
 			let appSetup = [( "smtpServer", smtpServer)]
 			initSystem "email.cfg" appSetup
 			smtpServer' <- (asIOString smtpServer)
