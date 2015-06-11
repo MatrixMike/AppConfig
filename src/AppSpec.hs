@@ -10,6 +10,8 @@ import Data.IORef
 import System.IO.Unsafe
 import AppConfig
 
+-- contents of email.cfg
+-- 
 -- username   = ausername
 -- password   = apassword
 -- smtpServer = smtp.gmail.com 
@@ -24,7 +26,7 @@ main = hspec $ do
 
 
 	describe "AppConfig.readProps" $ do
-		it "loads a valide cfg file" $ do
+		it "loads a valid config file" $ do
 
 			props <- readProps "email.cfg" 
 			length props `shouldBe` 4
@@ -38,7 +40,7 @@ main = hspec $ do
 
 	describe "AppConfig.initSystem" $ do
 		it "sets the value of smtpserver" $ do
-			
+
 			let appSetup = [( "smtpServer", smtpServer)]
 			initSystem "email.cfg" appSetup
 			smtpServer' <- (asIOString smtpServer)
