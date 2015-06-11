@@ -43,7 +43,7 @@ main = hspec $ do
 
 			let appSetup = [( "smtpServer", smtpServer)]
 			initSystem "email.cfg" appSetup
-			smtpServer' <- (asIOString smtpServer)
+			smtpServer' <- asIOString smtpServer
 			smtpServer' `shouldBe` "smtp.gmail.com" 
 
 	describe "AppConfig.getVal" $ do
